@@ -1,0 +1,30 @@
+{
+  "name": "@calcsg/calc",
+  "version": "1.0.0",
+  "description": "Calculator library for calc.SG",
+  "main": "index.js",
+  "repository": "https://github.com/calcsg/common.git",
+  "author": "jia1 <me@jiayee.net>",
+  "contributors": [
+    "Skaty <syed@syedabdullah.net>",
+    "turtle96 <angjazlyn@hotmail.com>"
+  ],
+  "license": "GPLv3",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.1"
+  }
+}
