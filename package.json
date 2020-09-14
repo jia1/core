@@ -1,0 +1,8 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:calcsg/common.git",
+  "author": "Calc.SG Developers <dev@calc.sg>",
+  "license": "GPL-3.0-or-later"
+}
