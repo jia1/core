@@ -6929,6 +6929,11 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
+nerdamer@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/nerdamer/-/nerdamer-1.1.5.tgz#0dab69914308015b38a7885c985d9493050635d1"
+  integrity sha512-6ubr5CCUbOEPA6aFQ8ZkvetnHy9mxolu/SaRJmgVuk+9YZpaC0PMpz8AmTrlS0qgNBQUBCjQsdwqsW06nKKJ0g==
+
 next-tick@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
