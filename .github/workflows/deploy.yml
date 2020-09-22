@@ -15,9 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - run: yarn install --frozen-lockfile
+    - run: yarn build
     - uses: crazy-max/ghaction-github-pages@v2.1.2
       with:
         fqdn: calc.sg
