@@ -55,6 +55,5 @@ const solveForOneUnknownVariable = (
 ) => {
   const equation = nerdamer(equationString).evaluate(knownValues);
   const solution = equation.solveFor(unknownVariable);
-  const answer = solution.toDecimal();
-  return answer;
+  return Number(solution.text());
 };
