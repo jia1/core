@@ -1,29 +1,29 @@
 import { calcCompoundInterest, calcSimpleInterest } from '../interest';
 
 test('calculates simple interest', () => {
-  const principal = 200000;
-  const interestRate = 0.02;
-  const numInterestDeposits = 10;
+  const principal = 100000;
+  const interestRatePerAnnum = 0.05;
+  const totalMonths = 60;
   const { totalAmount, totalInterest } = calcSimpleInterest({
     principal,
-    interestRate,
-    numInterestDeposits,
+    interestRatePerAnnum,
+    totalMonths,
   });
-  expect(totalAmount).toBe(240000);
-  expect(totalInterest).toBe(40000);
+  expect(totalAmount).toBe(125000);
+  expect(totalInterest).toBe(25000);
 });
 
 test('calculates compound interest', () => {
   const principal = 10000;
-  const interestRate = 0.025;
-  const compoundRate = 12;
-  const numInterestDeposits = 3;
+  const interestRatePerAnnum = 0.025;
+  const compoundRatePerAnnum = 12;
+  const totalMonths = 36;
   const { totalAmount, totalInterest } = calcCompoundInterest({
     principal,
-    interestRate,
-    compoundRate,
-    numInterestDeposits,
+    interestRatePerAnnum,
+    compoundRatePerAnnum,
+    totalMonths,
   });
-  expect(Number(totalAmount.toFixed(2))).toBe(10778.0);
-  expect(Number(totalInterest.toFixed(2))).toBe(778.0);
+  expect(Number(totalAmount.toFixed(2))).toBe(10778.77);
+  expect(Number(totalInterest.toFixed(2))).toBe(778.77);
 });

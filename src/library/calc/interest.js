@@ -3,19 +3,21 @@ import Algebra from 'nerdamer/Algebra';
 import Calculus from 'nerdamer/Calculus';
 import Solve from 'nerdamer/Solve';
 
+const totalMonthsPerYear = 12;
+
 export const calcCompoundInterest = ({
   principal,
-  interestRate,
-  compoundRate = 1,
-  numInterestDeposits,
+  interestRatePerAnnum,
+  compoundRatePerAnnum = 1,
+  totalMonths,
 }) => {
   const totalAmount = solveForOneUnknownVariable(
     'a=p*(1+(r/n))^(n*t)',
     {
       p: principal.toString(),
-      r: interestRate.toString(),
-      n: compoundRate.toString(),
-      t: numInterestDeposits.toString(),
+      r: (interestRatePerAnnum / totalMonthsPerYear).toString(),
+      n: compoundRatePerAnnum.toString(),
+      t: totalMonths.toString(),
     },
     'a',
     principal,
@@ -28,15 +30,15 @@ export const calcCompoundInterest = ({
 
 export const calcSimpleInterest = ({
   principal,
-  interestRate,
-  numInterestDeposits,
+  interestRatePerAnnum,
+  totalMonths,
 }) => {
   const totalAmount = solveForOneUnknownVariable(
     'a=p+p*r*t',
     {
       p: principal.toString(),
-      r: interestRate.toString(),
-      t: numInterestDeposits.toString(),
+      r: (interestRatePerAnnum / totalMonthsPerYear).toString(),
+      t: totalMonths.toString(),
     },
     'a',
     principal,
