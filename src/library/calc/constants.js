@@ -1,3 +1,1 @@
-export default Object.freeze({
-  TOTAL_MONTHS_PER_YEAR: 12,
-});
+export const TOTAL_MONTHS_PER_YEAR = 12;

@@ -1,4 +1,4 @@
-import constants from './constants';
+import { TOTAL_MONTHS_PER_YEAR } from './constants';
 import { solveForOneUnknownVariable } from './solver';
 
 generateAmortizationSchedule = ({
@@ -11,7 +11,7 @@ generateAmortizationSchedule = ({
     'm=p*(((r/n)*(1+(r/n))^(n*t))/((1+(r/n))^(n*t)-1))',
     {
       p: principal.toString(),
-      r: (interestRatePerAnnum / constants.TOTAL_MONTHS_PER_YEAR).toString(),
+      r: (interestRatePerAnnum / TOTAL_MONTHS_PER_YEAR).toString(),
       n: compoundRatePerMonth.toString(),
       t: totalMonths.toString(),
     },

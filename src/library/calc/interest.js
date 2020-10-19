@@ -1,4 +1,4 @@
-import constants from './constants';
+import { TOTAL_MONTHS_PER_YEAR } from './constants';
 import { solveForOneUnknownVariable } from './solver';
 
 export const calcCompoundInterest = ({
@@ -13,7 +13,7 @@ export const calcCompoundInterest = ({
     {
       p: principal.toString(),
       q: depositAmountPerMonth.toString(),
-      r: (interestRatePerAnnum / constants.TOTAL_MONTHS_PER_YEAR).toString(),
+      r: (interestRatePerAnnum / TOTAL_MONTHS_PER_YEAR).toString(),
       n: compoundRatePerMonth.toString(),
       t: totalMonths.toString(),
     },
@@ -35,7 +35,7 @@ export const calcSimpleInterest = ({
     'a=p+p*r*t',
     {
       p: principal.toString(),
-      r: (interestRatePerAnnum / constants.TOTAL_MONTHS_PER_YEAR).toString(),
+      r: (interestRatePerAnnum / TOTAL_MONTHS_PER_YEAR).toString(),
       t: totalMonths.toString(),
     },
     'a',
