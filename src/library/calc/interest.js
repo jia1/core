@@ -1,9 +1,5 @@
-import nerdamer from 'nerdamer/nerdamer.core';
-import Algebra from 'nerdamer/Algebra';
-import Calculus from 'nerdamer/Calculus';
-import Solve from 'nerdamer/Solve';
-
-const totalMonthsPerYear = 12;
+import constants from './constants';
+import { solveForOneUnknownVariable } from './solver';
 
 export const calcCompoundInterest = ({
   principal,
@@ -17,12 +13,11 @@ export const calcCompoundInterest = ({
     {
       p: principal.toString(),
       q: depositAmountPerMonth.toString(),
-      r: (interestRatePerAnnum / totalMonthsPerYear).toString(),
+      r: (interestRatePerAnnum / constants.TOTAL_MONTHS_PER_YEAR).toString(),
       n: compoundRatePerMonth.toString(),
       t: totalMonths.toString(),
     },
     'a',
-    principal,
   );
   return {
     totalAmount,
@@ -40,25 +35,13 @@ export const calcSimpleInterest = ({
     'a=p+p*r*t',
     {
       p: principal.toString(),
-      r: (interestRatePerAnnum / totalMonthsPerYear).toString(),
+      r: (interestRatePerAnnum / constants.TOTAL_MONTHS_PER_YEAR).toString(),
       t: totalMonths.toString(),
     },
     'a',
-    principal,
   );
   return {
     totalAmount,
     totalInterest: totalAmount - principal,
   };
-};
-
-const solveForOneUnknownVariable = (
-  equationString,
-  knownValues,
-  unknownVariable,
-  defaultValue,
-) => {
-  const equation = nerdamer(equationString).evaluate(knownValues);
-  const solution = equation.solveFor(unknownVariable);
-  return Number(solution.text());
 };
