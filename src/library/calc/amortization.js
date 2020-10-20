@@ -17,8 +17,17 @@ generateAmortizationSchedule = ({
     },
     'm',
   );
+  const amortizationSchedule = Array.from(
+    { length: totalMonths },
+    (_, numPayments) => {
+      return {
+        outstandingLoanBalance: principal - numPayments * totalPayment,
+      };
+    },
+  );
   return {
     totalPayment,
-    // TODO: principalPayment, interestPayment, interestToDate, outstandingLoanBalance
+    amortizationSchedule,
+    // TODO: principalPayment, interestPayment, interestToDate
   };
 };
